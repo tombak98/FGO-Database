@@ -9,13 +9,13 @@ async function seed() {
     //use this area to seed your database
     await Card.create({
       name: 'Arjuna Alter',
-      img: 'https://static.wikia.nocookie.net/fategrandorder/images/1/19/S247_Stage1.webp/revision/latest?cb=20220917062140',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2019-06/247_Arjuna%20Alter_4.png',
       class: 'Berserker'
     })
 
     await Card.create({
       name: 'Merlin',
-      img: 'https://static.wikia.nocookie.net/fategrandorder/images/7/7f/S150_Stage2.webp/revision/latest?cb=20220911081225',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2019-08/Merlin_CamelotnCo.png',
       class: 'Caster'
     })
     
