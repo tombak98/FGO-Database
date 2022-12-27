@@ -23,6 +23,11 @@ const SingleCard = () => {
                 <p>{card?.name}</p>
                 <p>Class: {card?.class}</p>
             </div>
+            <div className="card-details">
+                <p>Buster Buster Buster Arts Quick</p>
+                <p>Atk: 4000</p>
+                <p>HP: 5000</p>
+            </div>
         </div>
         </>
     )
