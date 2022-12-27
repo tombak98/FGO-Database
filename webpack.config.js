@@ -1,6 +1,6 @@
 module.exports = {
   mode: "development",
-  entry: ["./src/index.js"],
+  entry: ["./src/index.tsx"],
   output: {
     path: __dirname + "/public",
     filename: "bundle.js",
@@ -15,6 +15,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader:'ts-loader'
+        }
+      },
+      {
         test: /jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
@@ -24,4 +31,7 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  }
 };
