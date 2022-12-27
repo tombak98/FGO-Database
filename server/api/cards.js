@@ -10,4 +10,17 @@ router.get('/all', async(req,res,next) => {
     }
 })
 
+router.get('/:id', async(req,res,next) => {
+    try {
+        const single = await Card.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.send(single)
+    } catch(err) {
+        next(err)
+    }
+})
+
 module.exports = router

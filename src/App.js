@@ -3,6 +3,7 @@ import {Link, Routes, Route} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import Navbar from "./components/Navbar";
 import AllCards from "./components/AllCards";
+import SingleCard from "./components/SingleCard";
 
 
 function App(){
@@ -12,6 +13,7 @@ function App(){
         <Navbar/>
         <Routes>
             <Route path="/" element={<AllCards/>}/>
+            <Route path="/cards/:id" element={<SingleCard/>}/>
         </Routes>
         </>
 
