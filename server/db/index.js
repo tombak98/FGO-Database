@@ -5,6 +5,7 @@
 
 const db = require('./database')
 const User = require('./User')
+const Card = require('./Card')
 
 
 
@@ -12,5 +13,6 @@ const User = require('./User')
 module.exports = {
     // Include your models in this exports object as well!
     db,
-    User
+    User,
+    Card
 }

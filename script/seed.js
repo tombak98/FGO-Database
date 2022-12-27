@@ -2,19 +2,22 @@
 
 const db = require('../server/db/database')
 const User = require('../server/db/User')
+const Card = require('../server/db/Card')
 
 async function seed() {
     await db.sync({force: true})
     //use this area to seed your database
-    await User.create({
-        username: "Thomas",
-        password: "Bakbak",
-      })
+    await Card.create({
+      name: 'Arjuna Alter',
+      img: 'https://static.wikia.nocookie.net/fategrandorder/images/1/19/S247_Stage1.webp/revision/latest?cb=20220917062140',
+      class: 'Berserker'
+    })
 
-      await User.create({
-        username: "Bakbak",
-        password: "Bakbak2",
-      })
+    await Card.create({
+      name: 'Merlin',
+      img: 'https://static.wikia.nocookie.net/fategrandorder/images/7/7f/S150_Stage2.webp/revision/latest?cb=20220911081225',
+      class: 'Caster'
+    })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");
 }

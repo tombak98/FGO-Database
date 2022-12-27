@@ -17,7 +17,7 @@ if (process.env.DATABASE_URL) {
 }
 //initialize database, if deployed use postgres url in env variable, else use local verison
 const db = new Sequelize(
-  process.env.DATABASE_URL || `postgres://localhost:5432/test`,
+  process.env.DATABASE_URL || `postgres://localhost:5432/FGO`,
   config
 );
 module.exports = db;
