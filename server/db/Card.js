@@ -10,6 +10,15 @@ const Card = db.define('card', {
     },
     class: {
         type: Sequelize.STRING
+    },
+    deck: {
+        type: Sequelize.STRING
+    },
+    atk: {
+        type: Sequelize.INTEGER
+    },
+    hp: {
+        type: Sequelize.INTEGER
     }
 })
 

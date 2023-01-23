@@ -10,13 +10,19 @@ async function seed() {
     await Card.create({
       name: 'Arjuna Alter',
       img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2019-06/247_Arjuna%20Alter_4.png',
-      class: 'Berserker'
+      class: 'Berserker',
+      deck: 'BBBAQ',
+      atk: 10000,
+      hp: 9000
     })
 
     await Card.create({
       name: 'Merlin',
       img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2019-08/Merlin_CamelotnCo.png',
-      class: 'Caster'
+      class: 'Caster',
+      deck: 'AAABQ',
+      atk: 8000,
+      hp: 10000
     })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");
