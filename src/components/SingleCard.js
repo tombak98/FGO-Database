@@ -45,8 +45,8 @@ const SingleCard = () => {
                     </img>
                     )}
                 </div>
-                <p>Atk: 4000</p>
-                <p>HP: 5000</p>
+                <p>Atk: {card.atk}</p>
+                <p>HP: {card.hp}</p>
             </div>
         </div>
         </>
