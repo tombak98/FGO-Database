@@ -2711,6 +2711,21 @@ var SingleCard = function SingleCard() {
 
     getCard();
   }, []);
+  var deck = [];
+
+  if (card.deck) {
+    for (var i = 0; i < card.deck.length; i++) {
+      if (card.deck[i] === 'B') {
+        deck.push('https://gamepress.gg/grandorder/sites/grandorder/files/2019-05/CCBuster_0.png');
+      } else if (card.deck[i] === 'A') {
+        deck.push('https://grandorder.wiki/images/0/08/Command_Card_Arts.png');
+      } else {
+        deck.push('https://gamepress.gg/grandorder/sites/grandorder/files/2019-05/CCQuick.png');
+      }
+    }
+  }
+
+  console.log(deck);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "single-card-root"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -2720,7 +2735,14 @@ var SingleCard = function SingleCard() {
     src: card === null || card === void 0 ? void 0 : card.img
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, card === null || card === void 0 ? void 0 : card.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Class: ", card === null || card === void 0 ? void 0 : card["class"])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "card-details"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Buster Buster Buster Arts Quick"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Atk: 4000"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "HP: 5000"))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "card-deck"
+  }, deck === null || deck === void 0 ? void 0 : deck.map(function (card, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      key: idx,
+      src: card
+    });
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Atk: 4000"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "HP: 5000"))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleCard);

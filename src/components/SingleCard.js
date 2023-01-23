@@ -14,6 +14,21 @@ const SingleCard = () => {
         }
         getCard()
     },[])
+
+    let deck = []
+    if (card.deck) {
+        for (let i = 0; i < card.deck.length; i++) {
+            if (card.deck[i] === 'B') {
+                deck.push('https://gamepress.gg/grandorder/sites/grandorder/files/2019-05/CCBuster_0.png')
+            } else if (card.deck[i] === 'A') {
+                deck.push('https://grandorder.wiki/images/0/08/Command_Card_Arts.png')
+            } else {
+                deck.push('https://gamepress.gg/grandorder/sites/grandorder/files/2019-05/CCQuick.png')
+            }
+        }
+    }
+
+    console.log(deck)
     
     return (
         <>
@@ -24,7 +39,12 @@ const SingleCard = () => {
                 <p>Class: {card?.class}</p>
             </div>
             <div className="card-details">
-                <p>Buster Buster Buster Arts Quick</p>
+                <div className="card-deck">
+                    {deck?.map((card, idx) => 
+                    <img key={idx} src={card}>
+                    </img>
+                    )}
+                </div>
                 <p>Atk: 4000</p>
                 <p>HP: 5000</p>
             </div>
