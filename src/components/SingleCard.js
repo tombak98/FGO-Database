@@ -2,6 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+// this component shows a single card with deck as well
+
 const SingleCard = () => {
     const [card, setCard] = React.useState({})
 
