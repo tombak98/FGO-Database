@@ -14,11 +14,8 @@ async function seed() {
       deck: 'BBBAQ',
       atk: 10000,
       hp: 9000,
-      skills: [
-        'Anti-Evil (Unique) EX:Increase Own ATK (3 Turns). Apply Special Attack [Enemies with debuffs (excluding unremovable debuffs)] (3 Turns)',
-        'Clairvoyance (Transcendant EX):Increase your Buster Card Start Gather Rate (3 turns). Increase your NP Gauge.',
-        'Souls Light EX:Apply Guts to self (1 time, 3 turns). Recover own HP every turn (3 turns).'
-      ]
+      skills:
+        'Anti-Evil (Unique) EX:Increase Own ATK (3 Turns). Apply Special Attack [Enemies with debuffs (excluding unremovable debuffs)] (3 Turns)?Clairvoyance (Transcendant EX):Increase your Buster Card Start Gather Rate (3 turns). Increase your NP Gauge.?Souls Light EX:Apply Guts to self (1 time, 3 turns). Recover own HP every turn (3 turns).'
     })
 
     await Card.create({
@@ -28,11 +25,8 @@ async function seed() {
       deck: 'AAABQ',
       atk: 8000,
       hp: 10000,
-      skills: [
-        'Dreamlike Charisma A: Increases party attack for 3 turns. Charges party NP gauge by 20%',
-        'Illusion A: Grants party Invincibiility for 1 turn. Increases party crit star gen for 1 turn. Reduces all enemies crit attack chance for 3 turns.',
-        'Hero Creation EX: Increases one allys Buster performance for 3 turns. Increases their Max HP for 3 turns. Increases their crit damage for 1 turn.'
-      ]
+      skills:
+        'Dreamlike Charisma A: Increases party attack for 3 turns. Charges party NP gauge by 20%?Illusion A: Grants party Invincibiility for 1 turn. Increases party crit star gen for 1 turn. Reduces all enemies crit attack chance for 3 turns.?Hero Creation EX: Increases one allys Buster performance for 3 turns. Increases their Max HP for 3 turns. Increases their crit damage for 1 turn.'
     })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");

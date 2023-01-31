@@ -48,7 +48,7 @@ const SingleCard = () => {
                 </div>
                 <p>Atk: {card.atk}</p>
                 <p>HP: {card.hp}</p>
-                <Skills skillArray={card?.skills}></Skills>
+                <Skills/>
             </div>
         </div>
         </>
