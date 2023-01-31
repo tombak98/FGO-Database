@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Skills from "./Skills";
 
 // this component shows a single card with deck as well
 
@@ -50,6 +51,7 @@ const SingleCard = () => {
                 <p>Atk: {card.atk}</p>
                 <p>HP: {card.hp}</p>
             </div>
+            <Skills></Skills>
         </div>
         </>
     )
