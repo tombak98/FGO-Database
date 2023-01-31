@@ -19,6 +19,9 @@ const Card = db.define('card', {
     },
     hp: {
         type: Sequelize.INTEGER
+    },
+    skills: {
+        type: Sequelize.ARRAY(Sequelize.TEXT)
     }
 })
 

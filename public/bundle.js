@@ -2539,7 +2539,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
+ // this components shows all cards
 
 var AllCards = function AllCards() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]),
@@ -2619,7 +2619,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
+ // simple navigation bar, temporary for now
 
 var Navbar = function Navbar() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -2669,7 +2669,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
+ // this component shows a single card with deck as well
 
 var SingleCard = function SingleCard() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState({}),
