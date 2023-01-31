@@ -30,8 +30,6 @@ const SingleCard = () => {
             }
         }
     }
-
-    console.log(deck)
     
     return (
         <>
@@ -50,8 +48,8 @@ const SingleCard = () => {
                 </div>
                 <p>Atk: {card.atk}</p>
                 <p>HP: {card.hp}</p>
+                <Skills skillArray={card?.skills}></Skills>
             </div>
-            <Skills></Skills>
         </div>
         </>
     )
