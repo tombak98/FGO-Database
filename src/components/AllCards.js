@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const AllCards = () => {
     const [cards, setCards] = React.useState([])
+    const [input, setInput] = React.useState('')
 
     const navigate = useNavigate()
 
@@ -24,6 +25,9 @@ const AllCards = () => {
 
     return (
         <>
+        <div className="search-container">
+            <input placeholder='Filter by name here'></input>
+        </div>
         <div id="all-cards-root">
             {cards.map((card)=>
                 <div className="single-card" key={card.id} onClick={()=>clickHandler(card.id)}>

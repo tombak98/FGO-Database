@@ -2547,6 +2547,11 @@ var AllCards = function AllCards() {
       cards = _React$useState2[0],
       setCards = _React$useState2[1];
 
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(''),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      input = _React$useState4[0],
+      setInput = _React$useState4[1];
+
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
     function getCards() {
@@ -2588,6 +2593,10 @@ var AllCards = function AllCards() {
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "search-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    placeholder: "Filter by name here"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "all-cards-root"
   }, cards.map(function (card) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
