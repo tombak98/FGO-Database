@@ -28,6 +28,16 @@ async function seed() {
       skills:
         'Dreamlike Charisma A: Increases party attack for 3 turns. Charges party NP gauge by 20%?Illusion A: Grants party Invincibiility for 1 turn. Increases party crit star gen for 1 turn. Reduces all enemies crit attack chance for 3 turns.?Hero Creation EX: Increases one allys Buster performance for 3 turns. Increases their Max HP for 3 turns. Increases their crit damage for 1 turn.'
     })
+
+    await Card.create({
+      name: 'Senji Muramasa',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2020-12/302_Sengo%20Muramasa_4.png',
+      class: 'Saber',
+      deck: 'AABBQ',
+      atk: 9500,
+      hp: 10000,
+      skills: 'Geronmino skill, all three types up?Invincibility Pierce skill?NP Gauge up 50% skill'
+    })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");
 }
