@@ -9,7 +9,7 @@ const Navbar = () => {
 
     return (
         <div id="navbar">
-            <p style={{cursor: 'pointer'}} onClick={()=>navigate('/')}>FGO Database</p>
+            <p style={{cursor: 'pointer', width:'auto'}} onClick={()=>navigate('/')}>FGO Database</p>
         </div>
     )
 }

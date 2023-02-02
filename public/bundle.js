@@ -2629,7 +2629,8 @@ var Navbar = function Navbar() {
     id: "navbar"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     style: {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      width: 'auto'
     },
     onClick: function onClick() {
       return navigate('/');
