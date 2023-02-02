@@ -2592,13 +2592,25 @@ var AllCards = function AllCards() {
     navigate("/cards/".concat(id));
   }
 
+  console.log(input);
+  var filteredCards = cards.filter(function (object) {
+    if (object.name.toLowerCase().includes(input.toLowerCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "search-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    value: input,
+    onChange: function onChange(e) {
+      return setInput(e.target.value);
+    },
     placeholder: "Filter by name here"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "all-cards-root"
-  }, cards.map(function (card) {
+  }, filteredCards.map(function (card) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "single-card",
       key: card.id,

@@ -23,13 +23,23 @@ const AllCards = () => {
         navigate(`/cards/${id}`)
     }
 
+    console.log(input)
+
+    const filteredCards = cards.filter((object) => {
+        if (object.name.toLowerCase().includes(input.toLowerCase())) {
+            return true
+        } else {
+            return false
+        }
+    })
+
     return (
         <>
         <div className="search-container">
-            <input placeholder='Filter by name here'></input>
+            <input value={input} onChange={(e)=>setInput(e.target.value)} placeholder='Filter by name here'></input>
         </div>
         <div id="all-cards-root">
-            {cards.map((card)=>
+            {filteredCards.map((card)=>
                 <div className="single-card" key={card.id} onClick={()=>clickHandler(card.id)}>
                     <img src={card.img}></img>
                     <p>{card.name}</p>
