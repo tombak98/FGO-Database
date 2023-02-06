@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const AllCards = () => {
     const [cards, setCards] = React.useState([])
     const [input, setInput] = React.useState('')
+    const [sort, setSort] = React.useState('name')
 
     const navigate = useNavigate()
 
@@ -33,15 +34,28 @@ const AllCards = () => {
         }
     })
 
-    const sortedCards = filteredCards.sort()
+    const sortedCards = filteredCards.sort((a,b) => {
+        if (sort === 'name') {
+            return a.name - b.name
+        } else {
+            return a.class - b.class
+        }
+    })
 
     return (
         <>
         <div className="search-container">
             <input value={input} onChange={(e)=>setInput(e.target.value)} placeholder='Filter by name here'></input>
+            <div>
+                <span>Sort By:&nbsp;</span>
+                <select onChange={(e)=>setSort(e.target.value)}>
+                    <option value="name">Name</option>
+                    <option value="class">Class</option>
+                </select>
+            </div>
         </div>
         <div id="all-cards-root">
-            {filteredCards.map((card)=>
+            {sortedCards.map((card)=>
                 <div className="single-card" key={card.id} onClick={()=>clickHandler(card.id)}>
                     <img src={card.img}></img>
                     <p>{card.name}</p>
