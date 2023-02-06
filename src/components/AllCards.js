@@ -33,6 +33,8 @@ const AllCards = () => {
         }
     })
 
+    const sortedCards = filteredCards.sort()
+
     return (
         <>
         <div className="search-container">
