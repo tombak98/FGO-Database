@@ -7,14 +7,13 @@ import { useNavigate } from "react-router-dom";
 const AllCards = () => {
     const [cards, setCards] = React.useState([])
     const [input, setInput] = React.useState('')
-    const [sort, setSort] = React.useState('name')
+    const [sort, setSort] = React.useState('')
 
     const navigate = useNavigate()
 
     React.useEffect(()=>{
         async function getCards() {
             const {data} = await axios.get('/api/cards/all')
-            console.log(data)
             setCards(data)
         }
         getCards()
@@ -23,8 +22,6 @@ const AllCards = () => {
     function clickHandler(id) {
         navigate(`/cards/${id}`)
     }
-
-    console.log(input)
 
     const filteredCards = cards.filter((object) => {
         if (object.name.toLowerCase().includes(input.toLowerCase())) {
@@ -36,11 +33,13 @@ const AllCards = () => {
 
     const sortedCards = filteredCards.sort((a,b) => {
         if (sort === 'name') {
-            return a.name - b.name
-        } else {
-            return a.class - b.class
+            return a.name.localeCompare(b.name)
+        } else if (sort === 'class') {
+            return a.class.localeCompare(b.class)
         }
     })
+
+    console.log(sortedCards)
 
     return (
         <>
@@ -49,6 +48,7 @@ const AllCards = () => {
             <div>
                 <span>Sort By:&nbsp;</span>
                 <select onChange={(e)=>setSort(e.target.value)}>
+                    <option value="">None</option>
                     <option value="name">Name</option>
                     <option value="class">Class</option>
                 </select>

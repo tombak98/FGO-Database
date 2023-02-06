@@ -2552,7 +2552,7 @@ var AllCards = function AllCards() {
       input = _React$useState4[0],
       setInput = _React$useState4[1];
 
-  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default().useState('name'),
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(''),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       sort = _React$useState6[0],
       setSort = _React$useState6[1];
@@ -2577,10 +2577,9 @@ var AllCards = function AllCards() {
               case 2:
                 _yield$axios$get = _context.sent;
                 data = _yield$axios$get.data;
-                console.log(data);
                 setCards(data);
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -2597,7 +2596,6 @@ var AllCards = function AllCards() {
     navigate("/cards/".concat(id));
   }
 
-  console.log(input);
   var filteredCards = cards.filter(function (object) {
     if (object.name.toLowerCase().includes(input.toLowerCase())) {
       return true;
@@ -2607,11 +2605,12 @@ var AllCards = function AllCards() {
   });
   var sortedCards = filteredCards.sort(function (a, b) {
     if (sort === 'name') {
-      return a.name - b.name;
-    } else {
-      return a["class"] - b["class"];
+      return a.name.localeCompare(b.name);
+    } else if (sort === 'class') {
+      return a["class"].localeCompare(b["class"]);
     }
   });
+  console.log(sortedCards);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "search-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
@@ -2625,6 +2624,8 @@ var AllCards = function AllCards() {
       return setSort(e.target.value);
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: ""
+  }, "None"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
     value: "name"
   }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
     value: "class"

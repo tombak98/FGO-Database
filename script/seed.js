@@ -48,6 +48,16 @@ async function seed() {
       hp: 9000,
       skills: 'temp 1?temp2?temp3'
     })
+
+    await Card.create({
+      name: 'Artoria Pendragon',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/styles/servant_image/public/2017-07/Artoria4.png?itok=OmKQEsrL',
+      class: 'Saber',
+      deck:'BBAAQ',
+      atk: 10000,
+      hp: 9000,
+      skills: 'temp 1?temp2?temp3'
+    })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");
 }
