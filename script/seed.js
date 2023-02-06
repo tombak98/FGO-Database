@@ -38,6 +38,16 @@ async function seed() {
       hp: 10000,
       skills: 'Geronmino skill, all three types up?Invincibility Pierce skill?NP Gauge up 50% skill'
     })
+
+    await Card.create({
+      name: 'Katou Danzo',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2018-04/1884.jpg',
+      class: 'Assassin',
+      deck:'QQAAB',
+      atk: 9000,
+      hp: 9000,
+      skills: 'temp 1?temp2?temp3'
+    })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");
 }
