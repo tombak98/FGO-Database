@@ -1,4 +1,4 @@
-// include model imports here, to seed DB
+// include model imports here, to seed Database
 
 const db = require('../server/db/database')
 const User = require('../server/db/User')
