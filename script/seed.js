@@ -1,4 +1,4 @@
-// include model imports here, to seed DB
+// include model imports here, to seed Database
 
 const db = require('../server/db/database')
 const User = require('../server/db/User')
@@ -27,6 +27,36 @@ async function seed() {
       hp: 10000,
       skills:
         'Dreamlike Charisma A: Increases party attack for 3 turns. Charges party NP gauge by 20%?Illusion A: Grants party Invincibiility for 1 turn. Increases party crit star gen for 1 turn. Reduces all enemies crit attack chance for 3 turns.?Hero Creation EX: Increases one allys Buster performance for 3 turns. Increases their Max HP for 3 turns. Increases their crit damage for 1 turn.'
+    })
+
+    await Card.create({
+      name: 'Senji Muramasa',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2020-12/302_Sengo%20Muramasa_4.png',
+      class: 'Saber',
+      deck: 'AABBQ',
+      atk: 9500,
+      hp: 10000,
+      skills: 'Geronmino skill, all three types up?Invincibility Pierce skill?NP Gauge up 50% skill'
+    })
+
+    await Card.create({
+      name: 'Katou Danzo',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2018-04/1884.jpg',
+      class: 'Assassin',
+      deck:'QQAAB',
+      atk: 9000,
+      hp: 9000,
+      skills: 'temp 1?temp2?temp3'
+    })
+
+    await Card.create({
+      name: 'Artoria Pendragon',
+      img: 'https://gamepress.gg/grandorder/sites/grandorder/files/styles/servant_image/public/2017-07/Artoria4.png?itok=OmKQEsrL',
+      class: 'Saber',
+      deck:'BBAAQ',
+      atk: 10000,
+      hp: 9000,
+      skills: 'temp 1?temp2?temp3'
     })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");

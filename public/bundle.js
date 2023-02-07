@@ -2547,6 +2547,16 @@ var AllCards = function AllCards() {
       cards = _React$useState2[0],
       setCards = _React$useState2[1];
 
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(''),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      input = _React$useState4[0],
+      setInput = _React$useState4[1];
+
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(''),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      sort = _React$useState6[0],
+      setSort = _React$useState6[1];
+
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
     function getCards() {
@@ -2567,10 +2577,9 @@ var AllCards = function AllCards() {
               case 2:
                 _yield$axios$get = _context.sent;
                 data = _yield$axios$get.data;
-                console.log(data);
                 setCards(data);
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -2587,9 +2596,42 @@ var AllCards = function AllCards() {
     navigate("/cards/".concat(id));
   }
 
+  var filteredCards = cards.filter(function (object) {
+    if (object.name.toLowerCase().includes(input.toLowerCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  var sortedCards = filteredCards.sort(function (a, b) {
+    if (sort === 'name') {
+      return a.name.localeCompare(b.name);
+    } else if (sort === 'class') {
+      return a["class"].localeCompare(b["class"]);
+    }
+  });
+  console.log(sortedCards);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "search-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    value: input,
+    onChange: function onChange(e) {
+      return setInput(e.target.value);
+    },
+    placeholder: "Filter by name here"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Sort By:\xA0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    onChange: function onChange(e) {
+      return setSort(e.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: ""
+  }, "None"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "name"
+  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "class"
+  }, "Class")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "all-cards-root"
-  }, cards.map(function (card) {
+  }, sortedCards.map(function (card) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "single-card",
       key: card.id,
@@ -2619,12 +2661,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+
  // simple navigation bar, temporary for now
 
 var Navbar = function Navbar() {
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "navbar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "FGO Database"));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: {
+      cursor: 'pointer',
+      width: 'auto'
+    },
+    onClick: function onClick() {
+      return navigate('/');
+    }
+  }, "FGO Database"));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
