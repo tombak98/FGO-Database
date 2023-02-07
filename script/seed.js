@@ -6,7 +6,7 @@ const Card = require('../server/db/Card')
 
 async function seed() {
     await db.sync({force: true})
-    //use this area to seed your database
+    //use this area to seed your database.
     await Card.create({
       name: 'Arjuna Alter',
       img: 'https://gamepress.gg/grandorder/sites/grandorder/files/2019-06/247_Arjuna%20Alter_4.png',
