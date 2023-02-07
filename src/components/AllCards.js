@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-// this components shows all cards
+// this components shows all cards.
 
 const AllCards = () => {
     const [cards, setCards] = React.useState([])
