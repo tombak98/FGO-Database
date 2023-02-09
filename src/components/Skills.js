@@ -5,7 +5,6 @@ import axios from "axios";
 const Skills = () => {
 
     const [disp, setDisp] = React.useState(0)
-    const [card, setCard] = React.useState({})
     const [skills, setSkills] = React.useState([])
 
     const params = useParams()
@@ -13,7 +12,6 @@ const Skills = () => {
     React.useState(()=>{
         async function getCard() {
             const {data} = await axios.get(`/api/cards/${params.id}`)
-            setCard(data)
             setSkills(data.skills.split('?'))
         }
         getCard()
