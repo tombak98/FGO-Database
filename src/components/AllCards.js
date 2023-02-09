@@ -39,8 +39,6 @@ const AllCards = () => {
         }
     })
 
-    console.log(sortedCards)
-
     return (
         <>
         <div className="search-container">
