@@ -19,8 +19,6 @@ const Skills = () => {
         getCard()
     },[])
 
-    console.log(skills)
-
     return (
         <div className="skills-container">
             <div className="skill-picker">
