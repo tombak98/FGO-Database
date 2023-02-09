@@ -2539,7 +2539,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // this components shows all cards
+ // this components shows all cards.
 
 var AllCards = function AllCards() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]),
@@ -2610,7 +2610,6 @@ var AllCards = function AllCards() {
       return a["class"].localeCompare(b["class"]);
     }
   });
-  console.log(sortedCards);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "search-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
@@ -2849,15 +2848,10 @@ var Skills = function Skills() {
       disp = _React$useState2[0],
       setDisp = _React$useState2[1];
 
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState({}),
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      card = _React$useState4[0],
-      setCard = _React$useState4[1];
-
-  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      skills = _React$useState6[0],
-      setSkills = _React$useState6[1];
+      skills = _React$useState4[0],
+      setSkills = _React$useState4[1];
 
   var params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useParams)();
   react__WEBPACK_IMPORTED_MODULE_0___default().useState(function () {
@@ -2879,10 +2873,9 @@ var Skills = function Skills() {
               case 2:
                 _yield$axios$get = _context.sent;
                 data = _yield$axios$get.data;
-                setCard(data);
                 setSkills(data.skills.split('?'));
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -2894,7 +2887,6 @@ var Skills = function Skills() {
 
     getCard();
   }, []);
-  console.log(skills);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "skills-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
