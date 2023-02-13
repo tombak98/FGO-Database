@@ -2,6 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+// component for showing skills
+
 const Skills = () => {
 
     const [disp, setDisp] = React.useState(0)
