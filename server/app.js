@@ -20,7 +20,7 @@ app.get('*', (req, res, next) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
-// Error middleware
+// Error middleware.
 
 app.use((req, res, next) => {
     const error = Error('page not found');
