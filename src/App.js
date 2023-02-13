@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import AllCards from "./components/AllCards";
 import SingleCard from "./components/SingleCard";
 
+// main component
 
 function App(){
 
