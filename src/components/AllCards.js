@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getTestCards } from "../store/testSlice";
 
 // this components shows all cards.
 
@@ -9,12 +11,16 @@ const AllCards = () => {
     const [input, setInput] = React.useState('')
     const [sort, setSort] = React.useState('')
 
+    const test = useSelector((state) => state.test)
+    
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     React.useEffect(()=>{
         async function getCards() {
             const {data} = await axios.get('/api/cards/all')
             setCards(data)
+            dispatch(getTestCards(1))
         }
         getCards()
     },[])
@@ -52,9 +58,12 @@ const AllCards = () => {
                 </select>
             </div>
         </div>
+        <div id="hover-select" style={{display:'flex', width:'100%', textAlign:'center', justifyContent:'center', alignItems:'center', fontWeight:'bold', fontSize:'1.5rem'}}>
+            <p>Now Hovering: {test.name}</p>
+        </div>
         <div id="all-cards-root">
             {sortedCards.map((card)=>
-                <div className="single-card" key={card.id} onClick={()=>clickHandler(card.id)}>
+                <div onMouseEnter={()=>dispatch(getTestCards(card.id))} className="single-card" key={card.id} onClick={()=>clickHandler(card.id)}>
                     <img src={card.img}></img>
                     <p>{card.name}</p>
                     <p>Class: {card.class}</p>
